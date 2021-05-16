@@ -19,20 +19,20 @@ const gulp = require('gulp'),
 
 //set the input & output variables
 
-const tpl = './templates/drift-away/'
+const tpl = './templates/seraute'
 
 const input = {
-  sass: tpl + './assets/src/scss/**/*.scss',
-  customjs: tpl + './assets/src/js/*.js',
-  svg: tpl + './assets/src/svg/**/*.svg'
+  sass: tpl + '/assets/src/scss/**/*.scss',
+  customjs: tpl + '/assets/src/js/_*.js',
+  svg: tpl + '/assets/src/svg/**/*.svg'
 
 }
 
 const output = {
-  dist: tpl + './assets/dist/*',
-  css: tpl + './assets/dist/css',
-  customjs: tpl + './assets/dist/js/',
-  sassvg: tpl + './assets/src/sassvg'
+  dist: tpl + '/assets/dist/*',
+  css: tpl + '/assets/dist/css',
+  customjs: tpl + '/assets/dist/js/',
+  sassvg: tpl + '/assets/src/sassvg'
 
 }
 
@@ -57,7 +57,7 @@ function css2sass() {
 function customJs() {
 	return gulp
 	  .src([
-      tpl + 'assets/src/js/core.js',
+      tpl + '/assets/src/js/core.js',
       input.customjs])
 	  .pipe(sourcemaps.init())
       .pipe(concat('core.js'))
